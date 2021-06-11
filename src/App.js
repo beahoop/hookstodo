@@ -1,9 +1,20 @@
+import React, { useState } from 'react';
+import data from './data.json';
+//components
+
+import Header from "./Header";
+import ToDoList from "./ToDoList";
+
 import './App.css';
 
 function App() {
+  const [ toDoList, setToDoList ] = useState(data);
+
+
   return (
     <div className="App">
-    Hello World! A To Do List Will Go Here!
+    <Header/>
+    <ToDoList toDoList={toDoList}/>
     </div>
   );
 }
